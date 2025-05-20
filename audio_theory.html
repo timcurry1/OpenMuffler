@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Theory: Time and Frequency Domain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        #header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        #content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #444;
+        }
+
+        code {
+            background-color: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        pre {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        a {
+            color: #0084ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Audio Theory: Time and Frequency Domain</div>
+    <div id="content">
+        <h1>Understanding Audio in the Time and Frequency Domain</h1>
+        <p>
+            Audio signals, whether they originate from a musical instrument, a voice, or an engine, are complex waveforms that can be analyzed in multiple ways. Two fundamental perspectives for analyzing audio are the **time domain** and the **frequency domain**. Understanding these domains is essential for applications such as sound engineering, signal processing, and noise control.
+        </p>
+
+        <h2>Time Domain</h2>
+        <p>
+            The time domain representation of an audio signal displays how the amplitude of the sound wave varies over time. This is the most intuitive way to view sound, as it mimics how we perceive sound waves in the physical world. The mathematical representation of a time-domain signal can be written as:
+        </p>
+        <pre>
+s(t) = A * sin(2πft + φ)
+Where:
+s(t) = Signal as a function of time
+A = Amplitude (loudness)
+f = Frequency (pitch)
+t = Time
+φ = Phase (starting point of the wave)
+        </pre>
+        <p>
+            For example, when recording sound with a microphone, the time-domain waveform shows the changes in air pressure as a continuous function over time. Below is a typical time-domain waveform:
+        </p>
+        <p><i>(Include a graph here if needed for your application.)</i></p>
+
+        <h3>Applications of Time Domain Analysis</h3>
+        <ul>
+            <li>Analyzing transient events, such as drum hits or engine noise bursts.</li>
+            <li>Studying amplitude envelope (attack, decay, sustain, release).</li>
+            <li>Identifying distortions or clipping in recorded signals.</li>
+        </ul>
+
+        <h2>Frequency Domain</h2>
+        <p>
+            The frequency domain provides a different perspective, showing how much of the signal's energy is concentrated at various frequencies. This is achieved by transforming the time-domain signal using the **Fourier Transform**. The Fourier Transform is defined as:
+        </p>
+        <pre>
+F(f) = ∫ s(t) * e^(-j2πft) dt
+Where:
+F(f) = Frequency domain representation
+s(t) = Time-domain signal
+f = Frequency
+t = Time
+j = Imaginary unit
+        </pre>
+        <p>
+            The result is a frequency spectrum that displays the amplitude (or power) of the signal across different frequencies. This representation is essential for understanding the tonal characteristics of sound.
+        </p>
+
+        <h3>Applications of Frequency Domain Analysis</h3>
+        <ul>
+            <li>Identifying dominant frequencies in music or noise (e.g., fundamental frequency and harmonics).</li>
+            <li>Designing equalizers and filters to modify sound.</li>
+            <li>Noise reduction techniques by isolating and removing unwanted frequencies.</li>
+        </ul>
+
+        <h2>Time vs. Frequency Domain: Complementary Perspectives</h2>
+        <p>
+            While the time domain is useful for understanding how a signal changes moment-to-moment, the frequency domain provides a more holistic view of the signal's spectral content. In audio processing, the two domains are complementary:
+        </p>
+        <ul>
+            <li><b>Time domain:</b> Useful for short-duration, transient analysis.</li>
+            <li><b>Frequency domain:</b> Ideal for understanding tonal qualities and steady-state behaviors.</li>
+        </ul>
+        <p>
+            Many real-world applications, such as audio compression (e.g., MP3), rely on techniques that analyze and manipulate signals in both domains to achieve optimal results.
+        </p>
+
+        <h2>Tools for Analyzing Audio</h2>
+        <p>
+            Several tools are available for analyzing audio signals in both domains:
+        </p>
+        <ul>
+            <li><b>Time Domain Tools:</b> Oscilloscopes, audio editors (e.g., Audacity).</li>
+            <li><b>Frequency Domain Tools:</b> Spectrum analyzers, Fast Fourier Transform (FFT) software.</li>
+        </ul>
+
+        <h2>Further Reading</h2>
+        <p>
+            To deepen your understanding of audio theory and its applications, explore the following resources:
+        </p>
+        <ul>
+            <li><a href="https://ccrma.stanford.edu" target="_blank">Stanford CCRMA (Center for Computer Research in Music and Acoustics)</a></li>
+            <li><a href="https://www.aes.org" target="_blank">Audio Engineering Society</a></li>
+            <li><a href="https://www.mathworks.com" target="_blank">Matlab Documentation on Signal Processing</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpenMuffler for PhD Students</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #2b2d42;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h2 {
+      color: #2b2d42;
+    }
+    .section {
+      margin-bottom: 2rem;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #dee2e6;
+    }
+    a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Chat Styles */
+    .chat-container {
+      margin-top: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      max-height: 400px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+      padding-right: 0.5rem;
+    }
+    .chat-message {
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: #e8f0fe;
+      border-radius: 5px;
+    }
+    .chat-input {
+      display: flex;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    .chat-input button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #2b2d42;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    .chat-input button:hover {
+      background-color: #1a1c2b;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to OpenMuffler for PhD Students</h1>
+  <p>Explore. Research. Collaborate.</p>
+</header>
+
+<main>
+  <div class="section">
+    <h2>🚀 Discover Research Ideas</h2>
+    <p>Explore a curated collection of ongoing projects, trending academic topics, and innovative problem spaces.</p>
+    <a href="#">Browse Research Topics →</a>
+  </div>
+
+  <div class="section">
+    <h2>🤝 Collaborate with Other Scholars</h2>
+    <p>Find like-minded PhD students and researchers.</p>
+    <a href="#">Join Collaboration Groups →</a>
+  </div>
+
+  <div class="section">
+    <h2>📂 Share Your Work</h2>
+    <p>Post drafts, whitepapers, or data sets. Invite peer reviews.</p>
+    <a href="#">Upload Your Work →</a>
+  </div>
+
+  <div class="section">
+    <h2>🗓️ Events & Webinars</h2>
+    <p>Stay updated on virtual meetups, journal clubs, and conference calls.</p>
+    <a href="#">View Upcoming Events →</a>
+  </div>
+
+  <div class="section">
+    <h2>🧠 Resources</h2>
+    <p>Access guides on writing proposals, publishing, and more.</p>
+    <a href="#">Explore Learning Hub →</a>
+  </div>
+
+  <div class="section chat-container">
+    <h2>💬 Real-Time Collaboration Chat</h2>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-message">Welcome! Say hi to other researchers. 👋</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 OpenMuffler. All rights reserved.
+</footer>
+
+<script>
+  function sendMessage() {
+    const input = document.getElementById("chatInput");
+    const message = input.value.trim();
+    if (message === "") return;
+
+    const chatBox = document.getElementById("chatMessages");
+    const div = document.createElement("div");
+    div.className = "chat-message";
+    div.textContent = message;
+    chatBox.appendChild(div);
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // In production, you'd also send this to the backend here
+  }
+</script>
+
+</body>
+</html>

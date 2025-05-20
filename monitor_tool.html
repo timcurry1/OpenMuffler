@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Noise Monitoring & Noise Reduction Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        .calculator-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>iPhone Noise Monitoring & Noise Reduction Calculator</h1>
+    </header>
+    <main>
+        <!-- iPhone Noise Monitoring Instructions -->
+        <section>
+            <h2>How to Use Your iPhone to Monitor Noise</h2>
+            <ol>
+                <li>Open the <strong>Health app</strong> on your iPhone.</li>
+                <li>Navigate to the <strong>Browse</strong> tab and select <strong>Hearing</strong>.</li>
+                <li>Enable the feature <strong>Environmental Sound Levels</strong>.</li>
+                <li>Wear your Apple Watch (if you have one) or use the iPhone's built-in microphone to monitor surrounding noise levels.</li>
+                <li>View noise levels in real time or check historical data in the Health app.</li>
+                <li>For more advanced noise monitoring, download apps like <strong>dB Meter</strong> or <strong>NIOSH Sound Level Meter</strong> from the App Store.</li>
+            </ol>
+            <p>
+                Monitoring noise helps you measure the impact of engines and determine the effectiveness of noise-reduction strategies.
+            </p>
+        </section>
+
+        <!-- Noise Reduction Calculator -->
+        <section>
+            <h2>Noise Reduction Calculator</h2>
+            <p>Estimate the potential noise reduction for a specific engine after installing a muffler:</p>
+            <div class="calculator-container">
+                <label for="initialNoise">Initial Noise Level (dB):</label>
+                <input type="number" id="initialNoise" placeholder="Enter initial noise level (e.g., 110)" required>
+
+                <label for="mufflerType">Muffler Type:</label>
+                <select id="mufflerType">
+                    <option value="10">Basic Muffler (Reduction: 10 dB)</option>
+                    <option value="15">Advanced Muffler (Reduction: 15 dB)</option>
+                    <option value="20">High-Performance Muffler (Reduction: 20 dB)</option>
+                </select>
+
+                <button onclick="calculateNoiseReduction()">Calculate Reduction</button>
+
+                <div class="result" id="result"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function calculateNoiseReduction() {
+            const initialNoise = parseFloat(document.getElementById('initialNoise').value);
+            const mufflerReduction = parseFloat(document.getElementById('mufflerType').value);
+
+            if (isNaN(initialNoise)) {
+                document.getElementById('result').innerText = 'Please enter a valid noise level.';
+                return;
+            }
+
+            const finalNoise = initialNoise - mufflerReduction;
+            document.getElementById('result').innerText = `The estimated noise level after applying the muffler is ${finalNoise} dB.`;
+        }
+    </script>
+</body>
+</html>
